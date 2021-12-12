@@ -10,7 +10,10 @@ int main() {
   int bulls = 0, cows = 0;
   for (int i = 0; i < input.length(); i++) {
     for (int j = 0; j < output.length(); j++) {
-      if (input[i] == output[j] && i == j) bulls++;
+      if (input[i] == output[j] && i == j) {
+        bulls++;
+        break;
+      }
       else if (input[i] == output[j]) cows++;
     }
   }
