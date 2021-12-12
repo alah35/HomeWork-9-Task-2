@@ -9,13 +9,17 @@ int main() {
 
   int bulls = 0, cows = 0;
   for (int i = 0; i < input.length(); i++) {
-    for (int j = 0; j < output.length(); j++) {
-      if (input[i] == output[j] && i == j) {
-        bulls++;
-        break;
-      }
-      else if (input[i] == output[j]) cows++;
+    if (input[i] == output[i]) {
+      bulls++;
+      input[i] = '!';
     }
+  }
+  for (int i = 0; i < input.length(); i++) {
+    if ( input[i] != output[i]
+          && output.find(input[i]) != std::string::npos
+          && output[output.find(input[i])] 
+          != input[output.find(input[i])] ) 
+    cows++;
   }
   std::cout << "Bulls = " << bulls << " Cows = " << cows << "\n";
 } 
