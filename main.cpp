@@ -8,10 +8,10 @@ int main() {
   std::cin >> output;
 
   int bulls = 0, cows = 0;
-  for (int i = 0; i < output.length(); i++) {
-    for (int j = 0; j < input.length(); j++) {
-      if (output[i] == input[j] && i == j) bulls++;
-      else if (output[i] == input[j]) cows++;
+  for (int i = 0; i < input.length(); i++) {
+    for (int j = 0; j < output.length(); j++) {
+      if (input[i] == output[j] && i == j) bulls++;
+      else if (input[i] == output[j]) cows++;
     }
   }
   std::cout << "Bulls = " << bulls << " Cows = " << cows << "\n";
